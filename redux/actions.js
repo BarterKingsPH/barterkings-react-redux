@@ -61,6 +61,20 @@ let actions = {
         dispatch(actions.fetchItems(response.data.message));
       });
     }
+  },
+
+  fetchItemAsync : function(id){
+    return (dispatch) => {
+      axios.get('http://localhost:5000/items/' + id)
+        .then( (response) => {
+          dispatch( (response) => {
+            return {
+              type: 'FETCH_ITEM',
+              item: response
+            }
+          });
+        });
+    }
   }
 
 }

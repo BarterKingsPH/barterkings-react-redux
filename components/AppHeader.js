@@ -17,7 +17,7 @@ class AppHeader extends Component {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-              <img style={logoStyle} src="./images/logo-main.png"/>
+              <img style={logoStyle} src="http://localhost:8002/images/logo-main.png"/>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>

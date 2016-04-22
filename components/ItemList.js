@@ -10,7 +10,7 @@ class ItemList extends Component {
 		let {item} = this.props;
 
 		let imageStyle = {
-			height: '170px',
+			height: '190px',
 			width: '100%',
 			marginBottom: '7px'
 		}
