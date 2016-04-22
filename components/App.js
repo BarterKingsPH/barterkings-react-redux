@@ -41,7 +41,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return {items: state.items}
+  return state
 }
 
 function mapDispatchToProps(dispatch) {
