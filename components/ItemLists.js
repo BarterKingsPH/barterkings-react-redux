@@ -1,24 +1,28 @@
 import React, { Component } from 'react'
-import { Panel } from 'react-bootstrap'
+import { Panel, Row, Grid, Col } from 'react-bootstrap'
+import ItemList from './ItemList'
 
 
-class ItemList extends Component {
+
+class ItemLists extends Component {
 
 	render() {
 
-		let itemsObj = this.props.items;
+		let {items} = this.props;
 		
-		if (itemsObj) {
-			var items = this.props.items.map( (item) => {
-				return <li key={item._id}>{item.itemName}</li>
+		if (items) {
+			var itemsList = items.map( (item) => {
+				return <ItemList key={item._id} item={item}/>;
 			});
 		}else{
-			let items = []
+			let itemsList = []
 		};
 
 		return (
 			<Panel header="Item List">
-				{items}
+				<Col md={12}>
+					{itemsList}
+				</Col>
 			</Panel>
 		)  
 
@@ -26,4 +30,4 @@ class ItemList extends Component {
 
 }
 
-export default ItemList;
+export default ItemLists;

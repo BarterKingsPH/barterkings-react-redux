@@ -15,6 +15,9 @@ class App extends Component {
 
   constructor(props){
     super(props);
+  }
+
+  componentWillMount(){
     this.props.actions.fetchItemsAsync();
   }
 
@@ -22,7 +25,6 @@ class App extends Component {
     return (
       <div>
         <AppHeader/>
-        <Grid>
           <Col xs={6} md={3}>
             <PriceRange/>
             <CategoryLists/>
@@ -31,7 +33,6 @@ class App extends Component {
           <Col xs={12} md={9}>
             <ItemLists actions={this.props.actions} items={this.props.items}/>
           </Col>
-        </Grid>
         <AppFooter/>
       </div>
     )

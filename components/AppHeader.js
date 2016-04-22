@@ -38,7 +38,7 @@ class AppHeader extends Component {
             <NavItem href="#">Register</NavItem>
           </Nav>
         </Navbar.Collapse>
-      </Navbar> 
+      </Navbar>
     )
   }
 
