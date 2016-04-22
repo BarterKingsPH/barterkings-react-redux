@@ -1,15 +1,20 @@
 import React from 'react'
 import { render } from 'react-dom'
-import App from '../components/App'
+import Home from '../components/App'
+import Item from '../components/Item'
 import configureStore from '../redux/store'
 import { Provider } from 'react-redux'
-import actions from '../redux/actions'
+import { Router, Route, Link, browserHistory } from 'react-router'
 
 let store = configureStore()
 
 render(
   <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('app')
+    <Router history={browserHistory}>
+		<Route path="/" component={Home}/>
+		<Route path="/item" component={Item}>
+			<Route path="item/:id" component={Item}/>
+		</Route>
+	</Router>
+  </Provider>,document.getElementById('app')
 )
